@@ -1,0 +1,61 @@
+/* index.css */
+
+.awards-container {
+    padding: 100px 20px;
+    background-color: transparent;
+    text-align: center;
+    width: 100vw;
+  }
+  
+  .awards-title {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    color:#3b82f6;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .prev-button,
+  .next-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prev-button:hover,
+  .next-button:hover {
+    background-color: #555;
+  }
+  
+  .certificate-slide {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    transition: opacity 0.5s ease;
+  }
+  
+  .certificate-slide.active {
+    display: block;
+  }
+  
+  .certificate-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
