@@ -7,9 +7,21 @@ import Education from '../Education';
 const Home = () => {
   const navigate = useNavigate();
   const skills = [
-    { icon: FaCode, title: 'Web Development', description: 'HTML/CSS, React, Node.js, Express, MOngoDB, SQL, Tailwind CSS, Bootstrap' },
-    { icon: FaRocket, title: 'Languages', description: 'Python, C++, Java, JavaScript' },
-    { icon: FaPalette, title: 'Tools & Platforms', description: 'Git, AWS, Adobe Premiere, VN, Youtube ' },
+    {
+      icon: FaCode,
+      title: 'Web Development',
+      points: ['React, Node.js, Express', 'MongoDB, SQL', 'PostgreSQL', 'Tailwind CSS, Bootstrap', 'Nest JS, React Native']
+    },
+    {
+      icon: FaRocket,
+      title: 'Languages',
+      points: ['Python, C++', 'Java', 'JavaScript, TypeScript']
+    },
+    {
+      icon: FaPalette,
+      title: 'Tools & Platforms',
+      points: ['Git Version Control', 'AWS Cloud Services', 'Adobe Premiere, VN', 'YouTube Content Creation']
+    },
   ];
 
   return (
@@ -60,7 +72,11 @@ const Home = () => {
                 <skill.icon />
               </div>
               <h3 className="skill-title">{skill.title}</h3>
-              <p className="skill-description">{skill.description}</p>
+              <ul className="skill-list">
+                {skill.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

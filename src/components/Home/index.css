@@ -3,7 +3,7 @@
   padding: 120px 0 80px;
   position: relative;
   z-index: 2;
-  width:100vw;
+  width: 100vw;
   /* background: rgba(255, 255, 255, 0.9); */
   background-color: transparent;
 }
@@ -18,7 +18,7 @@
 
 .about-header {
   margin-bottom: 32px;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
 .about-title {
@@ -35,11 +35,13 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .typing-text {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid #3b82f6; /* Cursor */
+  border-right: 3px solid #3b82f6;
+  /* Cursor */
   font-size: 48px;
   font-weight: 700;
   animation: typing 4s steps(30, end) infinite, blink 0.75s step-end infinite;
@@ -50,21 +52,27 @@
   0% {
     width: 0;
   }
+
   50% {
     width: 100%;
   }
+
   85% {
     width: 100%;
   }
+
   100% {
     width: 0;
   }
 }
 
 @keyframes blink {
-  from, to {
+
+  from,
+  to {
     border-color: transparent;
   }
+
   50% {
     border-color: #3b82f6;
   }
@@ -89,14 +97,14 @@
   line-height: 1.7;
   color: #1f2937;
   margin-bottom: 40px;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
 .about-actions {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
 .about-image {
@@ -106,8 +114,8 @@
 
 .image-container {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -141,37 +149,110 @@
 }
 
 .skill-card {
-  background: white;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(226, 232, 240, 0.5);
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 40px 32px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(31, 38, 135, 0.05), inset 0 2px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(31, 38, 135, 0.12), 0 0 20px rgba(139, 92, 246, 0.2);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
 }
 
 .skill-icon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  border-radius: 12px;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  color: #6366f1;
+  font-size: 28px;
+  transition: all 0.4s ease;
+}
+
+.skill-card:hover .skill-icon {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   color: white;
-  font-size: 24px;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
 }
 
 .skill-title {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  color: #475569;
+  font-weight: 500;
+  line-height: 1.6;
+  padding-left: 28px;
+  position: relative;
   margin-bottom: 12px;
-  color: #1f2937;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.skill-list li:last-child {
+  margin-bottom: 0;
+}
+
+.skill-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-list li::before {
+  transform: scale(1.2);
+}
+
+.skill-card:hover .skill-list li {
+  color: #1e293b;
 }
 
 .skill-description {
