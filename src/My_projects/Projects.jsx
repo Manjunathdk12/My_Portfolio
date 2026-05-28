@@ -1,26 +1,59 @@
-// Import all images
-import timeline from "./timeline.png";
-import todo from "./todo.png";
-import destinationSearch from "./destination_search.png";
-import nxtTrendz from "./nxt_trendz.png";
-import jobby from "./jobby.png";
-import passwordManager from "./password-manager.png";
-import appointments from "./appointments.png";
-import coinToss from "./coinToss.png";
-import appStore from "./app-store.png";
-import googleSearch from "./googleSearch.png";
-import wikipedia from "./googleSearch.png"; // reuse or add correct img
-import iplDashboard from "./iplDashboard.png";
-import twitter from "./googleSearch.png"; // placeholder if no img yet
-import playerScore from "./score.png";
-import covid from "./covid.png";
-import movies from "./movies.png";
-import cricket from "./cricket.png";
-import turtleCrossing from "./turtleCrossing.png";
-import snakeGame from "./snakeGame.png";
-import cyberThreat from "./cyberThreat.png";
+import timeline from "./timeline.webp";
+import todo from "./todo.webp";
+import destinationSearch from "./destination_search.webp";
+import nxtTrendz from "./nxt_trendz.webp";
+import jobby from "./jobby.webp";
+import passwordManager from "./password-manager.webp";
+import appointments from "./appointments.webp";
+import coinToss from "./coinToss.webp";
+import appStore from "./app-store.webp";
+import googleSearch from "./googleSearch.webp";
+import wikipedia from "./googleSearch.webp";
+import iplDashboard from "./iplDashboard.webp";
+import twitter from "./googleSearch.webp";
+import playerScore from "./score.webp";
+import covid from "./covid.webp";
+import movies from "./movies.webp";
+import cricket from "./cricket.webp";
+import turtleCrossing from "./turtleCrossing.webp";
+import snakeGame from "./snakeGame.webp";
+import cyberThreat from "./cyberThreat.webp";
 
-export const allProjects = [
+export const commercialProjects = [
+  {
+    title: "GeoForge",
+    description:
+      "• <strong>High-performance map rendering</strong> with Leaflet, GeoServer WMS, and advanced coordinate system support (proj4, turf)\n      • <strong>3D engine</strong> powered by Three.js for CAD/DXF mesh visualization and TIN-based PointCloud volume calculations\n      • <strong>Custom 360° panorama viewer</strong> with WebGL navigation, offline IndexedDB storage, and interactive tour configurator\n      • <strong>Companion React Native mobile app</strong> with precision GPS tracking, photo capture, and real-time marker assignment\n      • <strong>Optimized memory management</strong> for large geospatial datasets with robust leak mitigation",
+    url: "",
+    image: "",
+    tech: [
+      "React 18",
+      "TypeScript",
+      "Three.js",
+      "React Native",
+      "Leaflet",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "TrackFlow",
+    description:
+      "• <strong>Employee whereabouts tracking</strong> with granular daily statuses mapped to Morning, Afternoon, and Full-day across a 52-week calendar grid\n      • <strong>Role-based access control</strong> with email pre-authorization and secure JWT authentication with access/refresh token flow\n      • <strong>Agile Kanban boards</strong> with drag-and-drop columns, fully customizable per project workspace\n      • <strong>Sprint lifecycle management</strong> including backlog grooming, task migration, and automatic rollback of incomplete items\n      • <strong>Rich task entities</strong> supporting story points, priority, epics, parent-child subtask hierarchy, and threaded comments",
+    url: "",
+    image: "",
+    tech: [
+      "React 19",
+      "Material-UI 7",
+      "PrimeReact",
+      "Tailwind CSS v4",
+      "FastAPI",
+      "MongoDB",
+      "AWS EC2",
+    ],
+  },
+];
+
+export const miniProjects = [
   {
     category: "Frontend Apps",
     title: "Timeline App",
@@ -163,7 +196,7 @@ export const allProjects = [
   },
 ];
 
-export const categories = [
+export const miniCategories = [
   "All",
   "Frontend Apps",
   "Full-Stack / API Projects",

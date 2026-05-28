@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Footer from "../Footer";
 import "./index.css";
+
+const useOnScreen = (threshold = 0.15) => {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.unobserve(el); } },
+      { threshold }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+  return [ref, visible];
+};
 
 const MailIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,10 +54,14 @@ const SendIcon = () => (
 );
 
 const Contact = () => {
+  const [headerRef, headerVisible] = useOnScreen(0.2);
+  const [infoRef, infoVisible] = useOnScreen(0.15);
+  const [formRef, formVisible] = useOnScreen(0.15);
+
   return (
     <>
       <div className="contact-section">
-        <div className="contact-header">
+        <div ref={headerRef} className={`contact-header ${headerVisible ? 'anim-fade-up' : ''}`}>
           <span className="contact-tag">GET IN TOUCH</span>
           <h2 className="contact-title">Let's Work Together</h2>
           <p className="contact-subtitle">
@@ -50,17 +70,16 @@ const Contact = () => {
         </div>
 
         <div className="contact-grid">
-          {/* Contact Info */}
-          <div className="contact-info">
-            <div className="info-card">
+          <div ref={infoRef} className={`contact-info ${infoVisible ? 'anim-visible' : ''}`}>
+            <div className="info-card" style={{ animationDelay: '0s' }}>
               <div className="info-icon"><MailIcon /></div>
               <div className="info-content">
                 <h3>Email</h3>
-                <p>manjunathdk12@gmail.com</p>
+                <p>manjunathhatti012@gmail.com</p>
               </div>
             </div>
-            
-            <div className="info-card">
+
+            <div className="info-card" style={{ animationDelay: '0.12s' }}>
               <div className="info-icon"><MapPinIcon /></div>
               <div className="info-content">
                 <h3>Location</h3>
@@ -68,7 +87,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="info-card">
+            <div className="info-card" style={{ animationDelay: '0.24s' }}>
               <div className="info-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
@@ -89,8 +108,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="contact-form-wrapper">
+          <div ref={formRef} className={`contact-form-wrapper ${formVisible ? 'anim-fade-up' : ''}`}>
             <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
@@ -117,6 +135,15 @@ const Contact = () => {
         </div>
       </div>
       <Footer />
+      <style>{`
+        .contact-header,
+        .contact-info .info-card,
+        .contact-form-wrapper { opacity: 0; transform: translateY(30px); }
+        .contact-header.anim-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .contact-info.anim-visible .info-card { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .contact-form-wrapper.anim-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+      `}</style>
     </>
   );
 };
