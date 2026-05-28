@@ -1,7 +1,7 @@
 import React from 'react';
 import school from "./images/school.jpg";
-import pu from "./images/pu.png";
-import pes from "./images/pes.png";
+import pu from "./images/pu.webp";
+import pes from "./images/pes.webp";
 import inferworks from "./images/inferworks.jpg";
 import "./index.css";
 

@@ -8,7 +8,7 @@ html, body {
 
 
 .footer {
-  background: #1f2937;
+  background: var(--footer-bg);
   color: white;
   padding: 60px 0 20px;
   position: relative;
@@ -39,7 +39,7 @@ html, body {
 }
 
 .footer-tagline {
-  color: #9ca3af;
+  color: var(--footer-text);
   line-height: 1.6;
   margin-bottom: 24px;
 }
@@ -86,7 +86,7 @@ html, body {
 
 .footer-link {
   position: relative;
-  color: #9ca3af;
+  color: var(--footer-text);
   text-decoration: none;
   background: none;
   border: none;
@@ -131,7 +131,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #9ca3af;
+  color: var(--footer-text);
   font-size: 16px;
 }
 
@@ -141,14 +141,14 @@ html, body {
 }
 
 .contact-text {
-  color: #9ca3af;
+  color: var(--footer-text);
   line-height: 1.6;
   font-size: 14px;
 }
 
 .footer-bottom {
   padding-top: 30px;
-  border-top: 1px solid #374151;
+  border-top: 1px solid var(--footer-border);
   text-align: center;
 }
 
@@ -157,7 +157,7 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: #9ca3af;
+  color: var(--footer-text);
   font-size: 14px;
 }
 
