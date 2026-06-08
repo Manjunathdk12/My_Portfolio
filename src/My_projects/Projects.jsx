@@ -18,6 +18,9 @@ import cricket from "./cricket.webp";
 import turtleCrossing from "./turtleCrossing.webp";
 import snakeGame from "./snakeGame.webp";
 import cyberThreat from "./cyberThreat.webp";
+import geoforgeImg from "./geoforge.webp";
+import trackflowImg from "./trackflow.webp";
+import suprateletrackImg from "./suprateletrack.webp";
 
 export const commercialProjects = [
   {
@@ -25,7 +28,7 @@ export const commercialProjects = [
     description:
       "• <strong>High-performance map rendering</strong> with Leaflet, GeoServer WMS, and advanced coordinate system support (proj4, turf)\n      • <strong>3D engine</strong> powered by Three.js for CAD/DXF mesh visualization and TIN-based PointCloud volume calculations\n      • <strong>Custom 360° panorama viewer</strong> with WebGL navigation, offline IndexedDB storage, and interactive tour configurator\n      • <strong>Companion React Native mobile app</strong> with precision GPS tracking, photo capture, and real-time marker assignment\n      • <strong>Optimized memory management</strong> for large geospatial datasets with robust leak mitigation",
     url: "",
-    image: "",
+    image: geoforgeImg,
     tech: [
       "React 18",
       "TypeScript",
@@ -40,7 +43,7 @@ export const commercialProjects = [
     description:
       "• <strong>Employee whereabouts tracking</strong> with granular daily statuses mapped to Morning, Afternoon, and Full-day across a 52-week calendar grid\n      • <strong>Role-based access control</strong> with email pre-authorization and secure JWT authentication with access/refresh token flow\n      • <strong>Agile Kanban boards</strong> with drag-and-drop columns, fully customizable per project workspace\n      • <strong>Sprint lifecycle management</strong> including backlog grooming, task migration, and automatic rollback of incomplete items\n      • <strong>Rich task entities</strong> supporting story points, priority, epics, parent-child subtask hierarchy, and threaded comments",
     url: "",
-    image: "",
+    image: trackflowImg,
     tech: [
       "React 19",
       "Material-UI 7",
@@ -49,6 +52,20 @@ export const commercialProjects = [
       "FastAPI",
       "MongoDB",
       "AWS EC2",
+    ],
+  },
+  {
+    title: "FleetVision",
+    description:
+      "• <strong>Real-time Telemetry (IoT)</strong> via MQTT and AWS IoT Core for live vehicle data streams\n      • <strong>Maps & Geospatial</strong> integrating Mappls SDK and Turf.js for live tracking and complex geofencing\n      • <strong>Trip History & Analytics</strong> using custom polyline rendering and charting libraries\n      • <strong>Push Notifications & Security</strong> utilizing Firebase Cloud Messaging (FCM) and encrypted storage\n      • <strong>Resilient Connections</strong> managing MQTT lifecycle deeply integrated with app background/foreground states",
+    url: "",
+    image: suprateletrackImg,
+    tech: [
+      "React Native",
+      "MQTT",
+      "AWS IoT",
+      "Mappls",
+      "Firebase",
     ],
   },
 ];
