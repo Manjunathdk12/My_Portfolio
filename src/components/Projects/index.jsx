@@ -62,13 +62,22 @@ const Projects = () => {
                 className="pro-card pro-card--featured"
                 style={{ animationDelay: `${index * 0.25}s` }}
               >
-                <div className="pro-card-hero" style={{ background: gradients[index] || gradients[0] }}>
-                  <div className="pro-card-hero-bg">
-                    <svg className="pro-card-hero-grid" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                      <defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.12)" /></pattern></defs>
-                      <rect width="200" height="200" fill="url(#dots)" />
-                    </svg>
-                    <div className="pro-card-hero-shape" />
+                <div 
+                  className="pro-card-hero" 
+                  style={{ 
+                    background: project.image ? `url(${project.image}) center/cover no-repeat` : (gradients[index] || gradients[0]) 
+                  }}
+                >
+                  <div className="pro-card-hero-bg" style={project.image ? { backgroundColor: 'rgba(0,0,0,0.6)' } : {}}>
+                    {!project.image && (
+                      <>
+                        <svg className="pro-card-hero-grid" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                          <defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.12)" /></pattern></defs>
+                          <rect width="200" height="200" fill="url(#dots)" />
+                        </svg>
+                        <div className="pro-card-hero-shape" />
+                      </>
+                    )}
                   </div>
                   <span className="pro-card-hero-num">0{index + 1}</span>
                   <h3 className="pro-card-hero-title">{project.title}</h3>
